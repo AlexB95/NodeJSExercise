@@ -1,0 +1,25 @@
+{
+  "name": "moviestore",
+  "version": "1.0.0",
+  "description": "This is a Node.JS exercise that connect with MongoDB using Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexB95/NodeJSExercise.git"
+  },
+  "keywords": [
+    "Scio",
+    "NodeJS",
+    "MongoDB",
+    "Express"
+  ],
+  "author": "Ignacio Alexander Barriga Rios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexB95/NodeJSExercise/issues"
+  },
+  "homepage": "https://github.com/AlexB95/NodeJSExercise#readme"
+}
