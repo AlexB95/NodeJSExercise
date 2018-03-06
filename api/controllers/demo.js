@@ -1,6 +1,6 @@
 var business = require('./businessController');
 
-var myobj = { name: "Company Inc", address: "Highway 37" };
+var myobj = 2;
 var collectionDB = "business";
 //business.insertDB(myobj,collectionDB);
-business.deleteDB(myobj, collectionDB);
+business.deleteDB({a: myobj}, collectionDB);

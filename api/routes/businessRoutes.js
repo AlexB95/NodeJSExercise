@@ -1,14 +1,14 @@
 'use strict';
 module.exports = function(app) {
   var business = require('../controllers/businessController');
-
+  var collectionDB = "business";
   // business Routes
   app.route('/business')
-    .get(business.list_all_business)
-    .post(business.create_a_business);
+    .get((req, res) => res = business.findAllDB(collectionDB))
+    
 
   app.route('/business/:businessID')
-    .get(business.read_a_business)
-    .put(business.update_a_business)
-    .delete(business.delete_a_business);
+    .get(function(req, res){
+      console.log(req.params, collectionDB);
+    })
 };
