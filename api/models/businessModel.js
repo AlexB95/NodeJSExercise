@@ -1,23 +1,28 @@
-/* 'use strict';
+'use strict';
 var mongoose = require('mongoose');
-var schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
-var movieSchema = new Schema({
-    name: {
-        type: String,
+var businessSchema = new Schema({
+    id: {
+        type: Number,
         required: 'Kindly enter the name of the movie'
     },
-    directedBy: {
-        type: String,
-        default: ''
-    },
-    duration: {
+    name: {
         type: String,
         required: 'Kindly enter the duration of the movie'
     },
+    phone: {
+        type: String,
+        default: ''
+    },
+    address: {
+        type: String,
+        default:''
+    },
     photo: {
         type: String,
+        default: ''
     }
 });
 
-module.exports = mongoose.model('Movies', movieSchema); */
+module.exports = mongoose.model('businesses', businessSchema);

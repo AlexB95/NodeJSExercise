@@ -1,67 +1,52 @@
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-const url = 'mongodb://localhost:27017';
-const dbName = 'business';
+var mongoose = require('mongoose'),
+    businessModel = require('../models/businessModel')
+    Business = mongoose.model('businesses');
 
+exports.list_all_business = function (req, res) {
+    Business.find({}, function (err, business) {
+        if (err)
+            res.send(err);
+        res.send(business);
+    });
+};
 
-exports.insertDB = (element, collectionDB) => {
-    MongoClient.connect(url, function (err, db) {
-        if (err) throw err;
-        var dbo = db.db(dbName);
-        dbo.collection(collectionDB).insertOne(element, function (err, res) {
-            if (err) throw err;
-            console.log("Element " + JSON.stringify(element) + " inserted");
-            db.close();
+exports.create_a_business = function (req, res) {
+    var new_business = new Business(req.body);
+    new_business.save(function (err, business) {
+        if (err)
+            res.send(err);
+        res.json(business);
+    });
+};
+
+exports.read_a_business = function (req, res) {
+    Business.findById(req.params.businessId, function (err, business) {
+        if (err)
+            res.send(err);
+        res.json(business);
+    });
+};
+
+exports.update_a_business = function (req, res) {
+    Business.findOneAndUpdate({
+        id: req.params.businessId
+    }, req.body, {
+        new: true
+    }, function (err, business) {
+        if (err)
+            res.send(err);
+        res.json(business);
+    });
+};
+
+exports.delete_a_business = function (req, res) {
+    Business.remove({
+        id: req.params.businessId
+    }, function (err, business) {
+        if (err)
+            res.send(err);
+        res.json({
+            message: 'Business successfully deleted'
         });
     });
-}
-
-exports.findAllDB = (collectionDB) => {
-    MongoClient.connect(url, function (err, db) {
-        if (err) throw err;
-        var dbo = db.db(dbName);
-        dbo.collection(collectionDB).find({}).toArray(function (err, result) {
-            if (err) throw err;
-            console.log("Found the following records")
-            console.log(result);
-            db.close();
-        });
-    });
-}
-
-exports.findQueryDB = (query, collectionDB) => {
-    MongoClient.connect(url, function (err, db) {
-        if (err) throw err;
-        var dbo = db.db(dbName);
-        dbo.collection(collectionDB).find(query).toArray(function (err, result) {
-            if (err) throw err;
-            console.log("Found the following records")
-            console.log(result);
-            db.close();
-        });
-    });
-}
-
-exports.updateDB = (toUpdate, updateData, collectionDB) => {
-    MongoClient.connect(url, function (err, db) {
-        if (err) throw err;
-        var dbo = db.db(dbName);
-        dbo.collection(collectionDB).updateMany(toUpdate, { $set: updateData }, function (err, result) {
-            if (err) throw err;
-            console.log("Document updated where " + JSON.stringify(toUpdate) + " to " + JSON.stringify(updateData));
-            db.close();
-        });
-    });
-}
-
-exports.deleteDB = (toDelete, collectionDB) => {
-    MongoClient.connect(url, function (err, db) {
-        if (err) throw err;
-        var dbo = db.db(dbName);
-        dbo.collection(collectionDB).remove(toDelete, function (err, result) {
-            if (err) throw err;
-            console.log("Deleted " + JSON.stringify(toDelete) + " from document");
-            db.close();
-        });
-    });
-}
+};

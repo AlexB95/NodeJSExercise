@@ -1,0 +1,41 @@
+{"businesses": [
+  {"id": 1,"name": "Ensaladas Jalisco","phone": "4421978463","address": "Av Madero #321 Col Centro","photo": "http://images-gmi-pmc.edge-generalmills.com/6e99b261-9284-423f-b0ab-0f9ea654d28f.jpg"},
+  {"id": 2,"name": "Pollos Asados","phone": "4498523164","address": "Av Morelos Nte #234","photo": "http://images-gmi-pmc.edge-generalmills.com/076e233c-4cd5-474f-9891-69e1bb28dff5.jpg"},
+  {
+    "id": 3,
+    "name": "Quesadillas - \"Kekas\" bien buenas",
+    "phone": "4498528855",
+    "address": "Av Tecnológico S/N",
+    "photo": "http://foodandtravel.mx/home/wp-content/uploads/2017/06/Baked-Chicken-Quesadillas-10.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Little Caesars Pizza",
+    "phone": "4494568523",
+    "address": "Av Ventura Puente #2185",
+    "photo": "http://oaxacahoy.com/wp-content/uploads/2017/05/1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Hamburguesas Mayo",
+    "phone": "4499631245",
+    "address": "Av Lázaro Cárdenas #555",
+    "photo": "https://quecomer-8f99.kxcdn.com/wp-content/uploads/2016/05/hamburguesas-fizz-3-960x640.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Tacos del tianguis",
+    "phone": "4435753258",
+    "address": "Calle Raza Maya, Lomas de Santiaguito, Morelia, Mich.",
+    "photo": "https://i.pinimg.com/originals/88/bc/46/88bc460831c71426cfc01adc2cf501fe.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Hamburguesas El Rey",
+    "": "4499631245",
+    "address": "Av Lázaro Cárdenas #555",
+    "photo": "https://quecomer-8f99.kxcdn.com/wp-content/uploads/2016/05/hamburguesas-fizz-3-960x640.jpg"
+  }
+]}
+
+
